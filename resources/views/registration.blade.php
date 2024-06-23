@@ -5,7 +5,7 @@
     <style>
         h1{
             text-align: center;
-            font-family: Algerian; 
+            font-family: bold italic; 
             font-size: 100px;
             padding-top: 1rem;
             padding-bottom: 1rem;

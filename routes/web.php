@@ -33,11 +33,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-
-// Registration Routes
-Route::get('/register', [RegisteredUserController::class, 'create'])->name('registration');
-Route::post('/register', [RegisteredUserController::class, 'store']);
-
 Route::get('/login',[AuthController::class,'index'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('login.submit');
 Route::get('/logout',[AuthController::class,'logout'])->middleware('auth')->name('logout');
