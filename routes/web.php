@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
@@ -30,6 +31,12 @@ Route::post('/save-updated-products', [ProductController::class, 'save_updated_p
 Route::middleware(['auth'])->group(function () {
     Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
 });
+
+
+
+// Registration Routes
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('registration');
+Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/login',[AuthController::class,'index'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('login.submit');
